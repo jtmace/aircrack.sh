@@ -29,6 +29,7 @@ else
 fi
 clear
 
+echo
 echo "Available Network Interfaces:"
 echo "============================="
 ifconfig -a | sed 's/[ \t].*//;/^\(lo\|\)$/d'

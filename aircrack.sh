@@ -37,12 +37,11 @@ echo
 echo "Cleaning up old monitor devices"
 echo "==============================="
 for i in $(seq 0 10); do iw dev mon$i del 2>/dev/null ; done
-#for i in $(seq 0 10); do iw dev mon$i del ; done
 
 echo 
-read -e -p "Which interface: " -i "wlx00c0ca9238e3" INTERFACE
+read -e -p "Which interface: " -i "wlan1" INTERFACE
 
-airmon-ng start wlx00c0ca9238e3
+airmon-ng start $INTERFACE
 
 echo
 echo "Available Network Interfaces:"

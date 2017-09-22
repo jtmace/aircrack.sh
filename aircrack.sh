@@ -1,19 +1,5 @@
 #!/bin/bash
-######################################################
-#  	                                             #
-#  For wireless penetration testing sometimes speed  # 
-#  is key.  This script makes the Aircrack-NG suite  #
-#  run a bit  more efficiently.  Happy cracking !!!  #
-#						     #
-#  If this is useful I may add more features, such   #
-#  as checking for the  4-way handshake, export to   #
-#  hccapx for hashcat. For the time  being I just    #
-#  feed the results into Wireshark to check for the  #
-#  handshake, and a diff tool for hccapx conversion  # 
-#						     #
-#  Run with `./aircrack.sh` *NOT* `sh aircrack.sh`   #
-# 						     #	
-######################################################
+
 DEAUTH_ATTEMPTS="3"
 
 if ! [ $(id -u) = 0 ]; then
